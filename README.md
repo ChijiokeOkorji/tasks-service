@@ -1,26 +1,12 @@
 # Tasks Service
 The Tasks Service is a microservice that provides endpoints for managing tasks. It allows users to create, retrieve, update, and delete tasks, and requests can be authenticated using either OAuth 2.0 access tokens or API keys. The service also implements role-based access control (RBAC).
 
-## Configuration
-The Tasks Service can be configured using the `application.yaml` file. Below are the configurable properties:
-
-* `spring.application.name`: Name of the application
-* `spring.datasource.url`: URL of the PostgreSQL database
-* `spring.datasource.username`: Username for the PostgreSQL database
-* `spring.datasource.password`: Password for the PostgreSQL database
-* `spring.datasource.driver-class-name`: Driver class name for the PostgreSQL database
-* `spring.jpa.database-platform`: Database platform dialect for Hibernate
-* `spring.jpa.hibernate.ddl-auto`: Hibernate DDL auto strategy
-* `spring.security.oauth2.resourceserver.jwt.issuer-uri`: Issuer URI for JWT validation
-* `server.port`: Port on which the application runs
-* `eureka.client.serviceUrl.defaultZone`: Default zone for Eureka service registry
-
 ## Prerequisites
 Before running the Tasks Service, ensure you have the following prerequisites installed:
 
 * Java Development Kit (JDK)
 * Apache Maven
-* PostgreSQL database set up with the required tables (refer to the [AuthEntity class](https://github.com/ChijiokeOkorji/tasks-service/blob/main/src/main/java/com/example/products/infrastructure/entity/AuthEntity.java) for the required table columns)
+* PostgreSQL database set up with the required tables (refer to the [AuthEntity class](https://github.com/ChijiokeOkorji/tasks-service/blob/main/src/main/java/com/example/tasks/infrastructure/entity/AuthEntity.java) for the required table columns)
 * Keycloak (for OAuth2 authentication and authorization)
 
 ## Installation
@@ -41,6 +27,20 @@ mvn clean install
 ```bash
 java -jar target/tasks-service-0.0.1-SNAPSHOT.jar
 ```
+
+## Configuration
+The Tasks Service can be configured using the `application.yaml` file. Below are the configurable properties:
+
+* `spring.application.name`: Name of the application
+* `spring.datasource.url`: URL of the PostgreSQL database
+* `spring.datasource.username`: Username for the PostgreSQL database
+* `spring.datasource.password`: Password for the PostgreSQL database
+* `spring.datasource.driver-class-name`: Driver class name for the PostgreSQL database
+* `spring.jpa.database-platform`: Database platform dialect for Hibernate
+* `spring.jpa.hibernate.ddl-auto`: Hibernate DDL auto strategy
+* `spring.security.oauth2.resourceserver.jwt.issuer-uri`: Issuer URI for JWT validation
+* `server.port`: Port on which the application runs
+* `eureka.client.serviceUrl.defaultZone`: Default zone for Eureka service registry
 
 ## Endpoints
 
